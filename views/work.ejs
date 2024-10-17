@@ -1,0 +1,20 @@
+
+<body>
+    <%- include("partials/header.ejs") %>
+    <main>
+        <div class="box" id="heading">
+            <h1><%= todo %></h1>
+    
+        </div>
+        <div class="box">
+            <form action="/work" method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <button type="submit" name="list" value="work" list>+</button>
+    
+            </form>
+    
+        </div>
+    </main>
+    <%- include("partials/footer.ejs") %>
+
+</body>
