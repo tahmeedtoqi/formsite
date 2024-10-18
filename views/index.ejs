@@ -20,9 +20,22 @@
         
             <form class="item" action="/" method="post">
               <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
-              <button type="submit" name="list" value=Thursday, October 17 >+</button>
+              <button type="submit" name="list" value="<%= dayType %>" >+</button>
             </form>
       </div>
+      <div class="box">
+        <ul>
+          <% items.forEach(function (item) { %>
+            <li>
+              <input type="checkbox">
+              <label><%= item %></label>
+            </li>
+            
+         <% }) %>
+        </ul>
+
+      </div>
+      <script src="/script.js"></script>
     </main>
     <%- include("partials/footer.ejs") %>
     

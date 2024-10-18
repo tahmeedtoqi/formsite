@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 const port = 3000;
+const items = [];
+const workItems = [];
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
@@ -16,6 +18,7 @@ app.get("/", (req, res)=>{
     let type = currentDay + " " + currentDate;
     res.render("index.ejs", {
         dayType: type,
+        items: items
     });
 });
 
@@ -31,15 +34,21 @@ app.get("/work", (req, res)=>{
     }
     res.render("work.ejs", {
         todo: to,
+        workItems: workItems
     });
 });
 
 app.post("/", (req, res)=>{
-    console.log(req.body);
+    const newItem = req.body.newItem;
+    items.push(newItem);
+    res.redirect("/");
+    
 });
 
 app.post("/work", (req, res)=>{
-    console.log(req.body);
+    const newItem = req.body.newItem;
+    workItems.push(newItem);
+    res.redirect("/work");
     
 });
 

@@ -11,6 +11,31 @@ body {
   min-height: 95vh;
 
 }
+
+li.checked label {
+  text-decoration: line-through;
+  text-decoration-color: purple; /* Purple line */
+  color: grey; /* Optional: Change text color to grey when checked */
+}
+
+/* Remove list dots */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Align checkboxes and text */
+li {
+  display: flex;
+  align-items: center;  /* Vertical alignment */
+  margin-bottom: 10px;  /* Optional: Add space between list items */
+}
+
+/* Ensure checkbox and text are left-aligned */
+li input[type="checkbox"] {
+  margin-right: 10px;  /* Add space between checkbox and text */
+}
+
 main {
   text-align: center;
   flex: 1 0 auto;
